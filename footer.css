@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #F7E7CE;
+}
+
+ul li {
+    list-style: none;
+    color: #F7E7CE;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #FFD700;
+}
+
+.footers {
+    background: transparent;
+    color: #F7E7CE;
+    padding: 2rem 0;
+}
+
+h2.footer__title {
+    font-size: 40px;
+    color: #F7E7CE;
+}
+.footer__subtitle{
+    font-size:30px;
+    margin-top:-10px;
+}
+
+.footers .footer {
+    z-index: 1;
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 12rem;
+}
+
+.footers .footer .images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: transparent;
+}
+
+.footers .footer .images .image {
+    position: absolute;
+    left: var(--position, 50%);
+    background-size: 100%;
+    background-position: center;
+    border-radius: 100%;
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+    -webkit-animation: image-size var(--time, 4s) ease-in infinite var(--delay, 0s), image-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    animation: image-size var(--time, 4s) ease-in infinite var(--delay, 0s), image-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+    overflow-x: hidden;
+}
+
+.footers .footer .contentfoot {
+    padding: 6rem 1rem 2rem;
+    z-index: 14;
+    background: transparent;
+}
+
+.footers .footer .contentfoot .container {
+    max-width: 768px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    color: #F7E7CE;
+}
+
+.contentfoot h2 {
+    font-size: 4rem; 
+}
+
+.contentfoot span {
+    font-size: 2rem; 
+}
+.footer__label{
+    font-size: 50px;
+}
+.footer__links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    transition: all 150ms ease-out;
+    justify-content: center;
+}
+
+.footer__links .footer__link {
+    transition: all 150ms ease-out;
+    display: inline-block;
+    position: relative;
+    font-size: 25px;
+}
+
+.footer__link:hover::after {
+    width: 100%;
+    background-color: #001f3f;
+}
+
+.footer__link::after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    background: transparent;
+    transition: width 0.25s ease-out, background-color 0.25s ease-out;
+}
+
+.footer__copy {
+    text-align: center;
+    background: transparent;
+    font-size:20px;
+    color: #F7E7CE;
+    padding: 3rem 0 2rem;
+}
+
+@-webkit-keyframes image-size {
+    0%, 75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@keyframes image-size {
+    0%, 75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@-webkit-keyframes image-move {
+    0% {
+        bottom: -4rem;
+    }
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
+
+@keyframes image-move {
+    0% {
+        bottom: -4rem;
+    }
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contentfoot h2 {
+        font-size: 25px;
+    }
+
+    .contentfoot span {
+        font-size: 15px;
+    }
+
+    .footer__links .footer__link {
+        font-size:19px;
+    }
+
+    .footer__copy {
+        font-size: 19px; 
+    }
+}
+
+@media screen and (max-width: 567px) {
+    .contentfoot h2 {
+        font-size: 25px; 
+    }
+
+    .contentfoot span {
+        font-size: 15px; 
+    }
+
+    .footer__links .footer__link {
+        font-size: 20px; 
+    }
+
+    .footer__copy {
+        font-size:20px;
+    }
+}
